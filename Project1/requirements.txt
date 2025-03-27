@@ -2,3 +2,8 @@ pandas
 numpy 
 scipy
 feature_engine
+nbformat
+scikit-learn
+matplotlib
+seaborn
+jupyter
