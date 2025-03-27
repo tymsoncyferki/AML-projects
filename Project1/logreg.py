@@ -97,7 +97,7 @@ class LogRegCCD:
 
         results = {
             'lambda': self.lambdas,
-            measure: scores,
+            'measure': scores,
             'coefficients': coeffs_list
         }
         return results, self.best_lambda
