@@ -71,7 +71,7 @@ class LogRegCCD:
             lmbda = self.lambda_min
 
         n_samples, n_features = X_train.shape
-        self.coefficients = np.zeros(n_features + 1)
+        self.coefficients = np.random.normal(0, 0.01, n_features + 1)
 
         for _ in range(100):
             intercept = self.coefficients[0]
@@ -85,9 +85,13 @@ class LogRegCCD:
                 l2_penalty = (1 - self.alpha) * lmbda
                 soft_threshold = np.sign(gradient) * max(0.0, abs(gradient) - l1_penalty)
                 weights[j] = soft_threshold.item() / (1 + l2_penalty)
+
             intercept += np.mean(y_train - self._sigmoid(np.dot(X_train, weights) + intercept))
             self.coefficients[0] = intercept
             self.coefficients[1:] = weights
+            log_loss = -np.mean(y_train * np.log(np.asarray(self._sigmoid(np.dot(X_train, self.coefficients[1:]) + self.coefficients[0]).T).reshape(-1)) +
+                                (1 - y_train) * np.log(1 - np.asarray(self._sigmoid(np.dot(X_train, self.coefficients[1:]) + self.coefficients[0]).T).reshape(-1)))
+            print(f"Iteration {_}, Log-loss: {log_loss}")
 
     def validate(self, X_valid, y_valid, measure="f1"):
         """
