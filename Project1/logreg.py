@@ -203,7 +203,6 @@ class LogRegCCD:
         df = pd.DataFrame(data={'lambda': results['lambda'], measure: results[measure]})
         df.plot(x='lambda', y=measure, logx=True)
         plt.grid(True)
-        plt.title(f'{measure.upper()} Score vs Lambda')
         plt.xlabel('Lambda (log scale)')
         plt.ylabel(f'{measure.upper()} Score')
         plt.show()
@@ -253,7 +252,6 @@ class LogRegCCD:
         
         plt.xscale('log')
         plt.grid(True)
-        plt.title('Feature Coefficient Paths (Intercept Excluded)')
         plt.xlabel('Lambda (log scale)')
         plt.ylabel(ylabel)
         plt.show()
