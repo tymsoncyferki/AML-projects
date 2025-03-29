@@ -1,0 +1,38 @@
+LogRegCCD Evaluation Summary for secom
+Date: 2025-03-29 20:27:08
+
+Parameters:
+  num_lambdas: 10
+  lambda_min: 0.001
+  lambda_max: 1.0
+  alpha: 0.2
+
+Results by Optimization Metric:
+
+ROC_AUC Optimization:
+  Best lambda: 0.464159
+  ROC_AUC: 0.7331
+  PR_AUC: 0.3747
+  F1: 0.0000
+  BALANCED_ACCURACY: 0.5000
+
+PR_AUC Optimization:
+  Best lambda: 0.215443
+  ROC_AUC: 0.7208
+  PR_AUC: 0.4448
+  F1: 0.0000
+  BALANCED_ACCURACY: 0.5000
+
+F1 Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.7245
+  PR_AUC: 0.4065
+  F1: 0.0606
+  BALANCED_ACCURACY: 0.5123
+
+BALANCED_ACCURACY Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.7245
+  PR_AUC: 0.4065
+  F1: 0.0606
+  BALANCED_ACCURACY: 0.5123

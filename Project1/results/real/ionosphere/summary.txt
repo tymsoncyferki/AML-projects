@@ -1,0 +1,38 @@
+LogRegCCD Evaluation Summary for ionosphere
+Date: 2025-03-29 20:27:26
+
+Parameters:
+  num_lambdas: 10
+  lambda_min: 0.001
+  lambda_max: 1.0
+  alpha: 0.2
+
+Results by Optimization Metric:
+
+ROC_AUC Optimization:
+  Best lambda: 0.464159
+  ROC_AUC: 0.7000
+  PR_AUC: 0.7991
+  F1: 0.6250
+  BALANCED_ACCURACY: 0.7045
+
+PR_AUC Optimization:
+  Best lambda: 0.464159
+  ROC_AUC: 0.7000
+  PR_AUC: 0.7991
+  F1: 0.6250
+  BALANCED_ACCURACY: 0.7045
+
+F1 Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.6364
+  PR_AUC: 0.7474
+  F1: 0.7059
+  BALANCED_ACCURACY: 0.7545
+
+BALANCED_ACCURACY Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.6364
+  PR_AUC: 0.7474
+  F1: 0.7059
+  BALANCED_ACCURACY: 0.7545
