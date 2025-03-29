@@ -1,5 +1,25 @@
 LogRegCCD Evaluation Summary for secom
-Date: 2025-03-29 20:27:08
+Date: 2025-03-29 21:16:48
+
+==================================================
+SKLEARN LOGISTIC REGRESSION RESULTS
+==================================================
+
+Unregularized model:
+  ROC_AUC: 0.7018
+  PR_AUC: 0.4180
+  F1: 0.4179
+  BALANCED_ACCURACY: 0.6418
+
+L1-regularized model (C=100.00):
+  ROC_AUC: 0.7360
+  PR_AUC: 0.4800
+  F1: 0.4118
+  BALANCED_ACCURACY: 0.6380
+
+==================================================
+LOGREG CCD RESULTS
+==================================================
 
 Parameters:
   num_lambdas: 10

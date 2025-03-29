@@ -1,5 +1,25 @@
 LogRegCCD Evaluation Summary for speech
-Date: 2025-03-29 20:33:16
+Date: 2025-03-29 21:14:34
+
+==================================================
+SKLEARN LOGISTIC REGRESSION RESULTS
+==================================================
+
+Unregularized model:
+  ROC_AUC: 0.8291
+  PR_AUC: 0.9163
+  F1: 0.8671
+  BALANCED_ACCURACY: 0.7110
+
+L1-regularized model (C=0.10):
+  ROC_AUC: 0.8523
+  PR_AUC: 0.9385
+  F1: 0.8956
+  BALANCED_ACCURACY: 0.7064
+
+==================================================
+LOGREG CCD RESULTS
+==================================================
 
 Parameters:
   num_lambdas: 10
