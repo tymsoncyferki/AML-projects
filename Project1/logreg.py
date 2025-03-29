@@ -208,13 +208,16 @@ class LogRegCCD:
         plt.ylabel(f'{measure.upper()} Score')
         plt.show()
 
-    def plot_coefficients(self, results):
+    def plot_coefficients(self, results, aggregate=False):
         """
         Plot coefficient values for different lambda values.
-
+        
         Args:
             results (dict): Dictionary returned by the optimize_lambda method, containing lambda values and coefficients.
-
+            aggregate (bool): Whether to plot aggregated coefficient values (default is True). 
+                            If True, plots the aggregated metric across features (excluding intercept).
+                            If False, plots individual coefficient paths (excluding intercept).
+        
         Returns:
             None
 
@@ -229,24 +232,32 @@ class LogRegCCD:
             print("Coefficient data not found in results.")
             return
 
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(10, 6))
         lambdas = results['lambda']
         coeffs = results['coefficients']
-
-        # Extract each coefficient across all lambda values
+        
+        # Assume coeffs is a list of lists (or arrays) where the first element is the intercept.
         n_features = len(coeffs[0])
-
-        for i in range(n_features):
-            feature_name = 'Intercept' if i == 0 else f'Feature {i}'
-            coef_values = [c[i] for c in coeffs]
-            plt.plot(lambdas, coef_values, label=feature_name)
-
+        
+        if aggregate:
+            # Aggregate coefficients: for example, calculate mean absolute value for all features (excluding intercept)
+            aggregated_coefs = [np.mean(np.abs(c[1:])) for c in coeffs]
+            plt.plot(lambdas, aggregated_coefs, label='Aggregated Coefficient (mean abs)')
+            plt.legend()
+            ylabel = 'Mean Absolute Coefficient Value'
+        else:
+            # Plot individual coefficient paths for each feature, excluding intercept
+            for i in range(1, n_features):
+                feature_name = f'Feature {i}'
+                coef_values = [c[i] for c in coeffs]
+                plt.plot(lambdas, coef_values, label=feature_name)
+            ylabel = 'Coefficient Value'
+        
         plt.xscale('log')
         plt.grid(True)
-        plt.legend()
         plt.title('Coefficient Paths')
         plt.xlabel('Lambda (log scale)')
-        plt.ylabel('Coefficient Value')
+        plt.ylabel(ylabel)
         plt.show()
 
 
