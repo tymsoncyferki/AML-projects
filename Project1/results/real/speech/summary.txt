@@ -1,0 +1,58 @@
+LogRegCCD Evaluation Summary for speech
+Date: 2025-03-29 21:14:34
+
+==================================================
+SKLEARN LOGISTIC REGRESSION RESULTS
+==================================================
+
+Unregularized model:
+  ROC_AUC: 0.8291
+  PR_AUC: 0.9163
+  F1: 0.8671
+  BALANCED_ACCURACY: 0.7110
+
+L1-regularized model (C=0.10):
+  ROC_AUC: 0.8523
+  PR_AUC: 0.9385
+  F1: 0.8956
+  BALANCED_ACCURACY: 0.7064
+
+==================================================
+LOGREG CCD RESULTS
+==================================================
+
+Parameters:
+  num_lambdas: 10
+  lambda_min: 0.001
+  lambda_max: 1.0
+  alpha: 0.2
+
+Results by Optimization Metric:
+
+ROC_AUC Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.8371
+  PR_AUC: 0.9350
+  F1: 0.8760
+  BALANCED_ACCURACY: 0.6118
+
+PR_AUC Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.8371
+  PR_AUC: 0.9350
+  F1: 0.8760
+  BALANCED_ACCURACY: 0.6118
+
+F1 Optimization:
+  Best lambda: 0.021544
+  ROC_AUC: 0.8338
+  PR_AUC: 0.9335
+  F1: 0.8824
+  BALANCED_ACCURACY: 0.6433
+
+BALANCED_ACCURACY Optimization:
+  Best lambda: 0.010000
+  ROC_AUC: 0.8343
+  PR_AUC: 0.9337
+  F1: 0.8817
+  BALANCED_ACCURACY: 0.6490

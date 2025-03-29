@@ -1,0 +1,58 @@
+LogRegCCD Evaluation Summary for arrhythmia
+Date: 2025-03-29 21:15:37
+
+==================================================
+SKLEARN LOGISTIC REGRESSION RESULTS
+==================================================
+
+Unregularized model:
+  ROC_AUC: 0.6571
+  PR_AUC: 0.6010
+  F1: 0.5891
+  BALANCED_ACCURACY: 0.6105
+
+L1-regularized model (C=0.10):
+  ROC_AUC: 0.8734
+  PR_AUC: 0.8514
+  F1: 0.7321
+  BALANCED_ACCURACY: 0.7698
+
+==================================================
+LOGREG CCD RESULTS
+==================================================
+
+Parameters:
+  num_lambdas: 10
+  lambda_min: 0.001
+  lambda_max: 1.0
+  alpha: 0.2
+
+Results by Optimization Metric:
+
+ROC_AUC Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.8548
+  PR_AUC: 0.8531
+  F1: 0.6863
+  BALANCED_ACCURACY: 0.7485
+
+PR_AUC Optimization:
+  Best lambda: 0.464159
+  ROC_AUC: 0.8463
+  PR_AUC: 0.8595
+  F1: 0.3467
+  BALANCED_ACCURACY: 0.6048
+
+F1 Optimization:
+  Best lambda: 0.001000
+  ROC_AUC: 0.8503
+  PR_AUC: 0.8505
+  F1: 0.7222
+  BALANCED_ACCURACY: 0.7672
+
+BALANCED_ACCURACY Optimization:
+  Best lambda: 0.001000
+  ROC_AUC: 0.8503
+  PR_AUC: 0.8505
+  F1: 0.7222
+  BALANCED_ACCURACY: 0.7672

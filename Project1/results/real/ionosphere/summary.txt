@@ -1,0 +1,58 @@
+LogRegCCD Evaluation Summary for ionosphere
+Date: 2025-03-29 21:17:06
+
+==================================================
+SKLEARN LOGISTIC REGRESSION RESULTS
+==================================================
+
+Unregularized model:
+  ROC_AUC: 0.6818
+  PR_AUC: 0.7936
+  F1: 0.5333
+  BALANCED_ACCURACY: 0.6545
+
+L1-regularized model (C=0.10):
+  ROC_AUC: 0.6000
+  PR_AUC: 0.7154
+  F1: 0.5714
+  BALANCED_ACCURACY: 0.7000
+
+==================================================
+LOGREG CCD RESULTS
+==================================================
+
+Parameters:
+  num_lambdas: 10
+  lambda_min: 0.001
+  lambda_max: 1.0
+  alpha: 0.2
+
+Results by Optimization Metric:
+
+ROC_AUC Optimization:
+  Best lambda: 0.464159
+  ROC_AUC: 0.7000
+  PR_AUC: 0.7991
+  F1: 0.6250
+  BALANCED_ACCURACY: 0.7045
+
+PR_AUC Optimization:
+  Best lambda: 0.464159
+  ROC_AUC: 0.7000
+  PR_AUC: 0.7991
+  F1: 0.6250
+  BALANCED_ACCURACY: 0.7045
+
+F1 Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.6364
+  PR_AUC: 0.7474
+  F1: 0.7059
+  BALANCED_ACCURACY: 0.7545
+
+BALANCED_ACCURACY Optimization:
+  Best lambda: 0.100000
+  ROC_AUC: 0.6364
+  PR_AUC: 0.7474
+  F1: 0.7059
+  BALANCED_ACCURACY: 0.7545

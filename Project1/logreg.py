@@ -207,18 +207,20 @@ class LogRegCCD:
         df = pd.DataFrame(data={'lambda': results['lambda'], measure: results[measure]})
         df.plot(x='lambda', y=measure, logx=True)
         plt.grid(True)
-        plt.title(f'{measure.upper()} Score vs Lambda')
         plt.xlabel('Lambda (log scale)')
         plt.ylabel(f'{measure.upper()} Score')
         plt.show()
 
-    def plot_coefficients(self, results):
+    def plot_coefficients(self, results, aggregate=False):
         """
         Plot coefficient values for different lambda values.
-
+        
         Args:
             results (dict): Dictionary returned by the optimize_lambda method, containing lambda values and coefficients.
-
+            aggregate (bool): Whether to plot aggregated coefficient values. 
+                            If True, plots the mean absolute value of all feature coefficients.
+                            If False, plots individual feature coefficient paths.
+        
         Returns:
             None
 
@@ -233,24 +235,29 @@ class LogRegCCD:
             print("Coefficient data not found in results.")
             return
 
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(10, 6))
         lambdas = results['lambda']
         coeffs = results['coefficients']
-
-        # Extract each coefficient across all lambda values
+        
+        # Assume coeffs is a list of lists (or arrays) where the first element at index 0 is the intercept
         n_features = len(coeffs[0])
-
-        for i in range(n_features):
-            feature_name = 'Intercept' if i == 0 else f'Feature {i}'
-            coef_values = [c[i] for c in coeffs]
-            plt.plot(lambdas, coef_values, label=feature_name)
-
+        
+        if aggregate:
+            # Aggregate feature coefficients only (excluding intercept at index 0)
+            aggregated_coefs = [np.mean(np.abs(c[1:])) for c in coeffs]
+            plt.plot(lambdas, aggregated_coefs)  # Legend removed by not adding labels
+            ylabel = 'Mean Absolute Coefficient Value'
+        else:
+            # Plot individual feature coefficients, skipping intercept (index 0)
+            for i in range(1, n_features):
+                coef_values = [c[i] for c in coeffs]
+                plt.plot(lambdas, coef_values)  # Legend removed by not adding labels
+            ylabel = 'Coefficient Value'
+        
         plt.xscale('log')
         plt.grid(True)
-        plt.legend()
-        plt.title('Coefficient Paths')
         plt.xlabel('Lambda (log scale)')
-        plt.ylabel('Coefficient Value')
+        plt.ylabel(ylabel)
         plt.show()
 
 
