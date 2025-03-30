@@ -1,5 +1,13 @@
 # Logistic Regression CCD Model Guide
 
+## Prerequisites
+
+Before running the model, ensure you have the necessary libraries installed:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## 1. Fit Model
 
 Initialize and train the logistic regression model:
@@ -44,5 +52,3 @@ Plot the F1 score against lambda values:
 ```python
 ccd_model.plot(results, measure="f1")
 ```
-
-
