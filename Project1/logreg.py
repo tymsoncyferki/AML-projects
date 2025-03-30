@@ -55,7 +55,7 @@ class LogRegCCD:
         """
         return 1 / (1 + np.exp(-z))
 
-    def fit(self, X_train, y_train, lmbda=None):
+    def fit(self, X_train, y_train, lmbda=None, verbose=0):
         """
         Fits the logistic regression model using coordinate descent.
 
@@ -63,6 +63,7 @@ class LogRegCCD:
             X_train (np.ndarray): Feature matrix for training data.
             y_train (np.ndarray): Target vector for training data.
             lmbda (float, optional): Regularization strength. Defaults to lambda_min.
+            verbose (int): whether to print loss for each iteration, defaults to 0
 
         Returns:
             None
@@ -91,7 +92,8 @@ class LogRegCCD:
             self.coefficients[1:] = weights
             log_loss = -np.mean(y_train * np.log(np.asarray(self._sigmoid(np.dot(X_train, self.coefficients[1:]) + self.coefficients[0]).T).reshape(-1)) +
                                 (1 - y_train) * np.log(1 - np.asarray(self._sigmoid(np.dot(X_train, self.coefficients[1:]) + self.coefficients[0]).T).reshape(-1)))
-            print(f"Iteration {_}, Log-loss: {log_loss}")
+            if verbose == 1:
+                print(f"Iteration {_}, Log-loss: {log_loss}")
 
     def validate(self, X_valid, y_valid, measure="f1"):
         """
