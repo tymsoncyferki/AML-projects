@@ -268,10 +268,10 @@ def generate_dataset(p=0.5, n=1000, d=10, g=0.5) -> tuple[np.ndarray, np.ndarray
     Generates synthethic dataset
 
     Args: 
-        p: prior probability for y=1
-        n: number of instances
-        d: number of features
-        g: param for cov matrix
+        p (float): prior probability for y=1
+        n (int): number of instances
+        d (int): number of features
+        g (float): param for cov matrix
 
     Returns:
         X, y
