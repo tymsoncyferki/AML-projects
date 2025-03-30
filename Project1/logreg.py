@@ -73,6 +73,9 @@ class LogRegCCD:
         """
         Args:
             verbose (int): log level. 0 for no printing, 1 for progress bar, 2 for detailed info
+
+        Returns:
+            dict: 'lambda', measure, 'coefficients'
         """
         best_score = -np.inf
         scores = []
