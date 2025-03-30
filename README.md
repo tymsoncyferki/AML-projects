@@ -5,6 +5,7 @@
 Initialize and train the logistic regression model:
 
 ```python
+from logreg import *
 ccd_model = LogRegCCD()
 results, best_lambda = ccd_model.optimize_lambda(X_train, y_train, X_valid, y_valid)
 ccd_model.fit(X_train, y_train, best_lambda)
