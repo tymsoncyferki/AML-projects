@@ -172,4 +172,4 @@ cython_debug/
 .idea
 
 # other
-gait
+.DS_Store
