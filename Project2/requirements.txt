@@ -1,1 +1,4 @@
-# to do
+numpy==2.2.5
+pandas
+scikit-learn
+xgboost
