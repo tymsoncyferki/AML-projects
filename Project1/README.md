@@ -1,4 +1,4 @@
-<!-- # Project 1 - CyclicCD
+# Project 1 - CyclicCD
 
 ## Structure
 ### Files:
@@ -68,4 +68,3 @@ Plot the F1 score against lambda values:
 ```python
 ccd_model.plot(results, measure="f1")
 ```
- -->

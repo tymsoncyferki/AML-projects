@@ -4,6 +4,7 @@ Repository containing projects for Advanced Machine Learning course on Data Scie
 ## Structure:
 
 - /Project1 - Cyclic Coordinate Descent (CCD)
+- /Project2 - Performance/Dimension Trade-off Problem
   
 Inside each project folder there is a dedicated README file and requirements.
 
