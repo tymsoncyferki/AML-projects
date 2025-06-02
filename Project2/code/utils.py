@@ -24,7 +24,7 @@ def custom_score(y_true: np.ndarray, y_prob: np.ndarray, num_features: int, refe
     score = 10 * tp * scaling_factor - 200 * num_features
     return score
 
-def load_data(filename: str, path: str = "../data/") -> pd.DataFrame:
+def load_data(filename: str, path: str = "data/") -> pd.DataFrame:
     """
     Loads data
 
